@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+
     <title>DOM Exercise</title>
-    <style>
-        #debug_area{
-           
-        }
-    </style>
+
     <script>
         var first_val;
         var operand;
-
+        var second_val;
+        
         function display_debug() {
             var debug_out = document.getElementById("debug_area");
             var debug_text = "<p>first_val:" + first_val + "</p>";
+            debug_area.style.color = 'gray';
+            debug_area.style.background = 'pink';
             debug_text += "<p>operand:" + operand + "</p>";
             debug_out.innerHTML = debug_text;
 
@@ -105,7 +106,9 @@
             document.getElementById("btn_clear").onclick = button_clear;
         }
     </script>
+
 </head>
+
 <body>
 
 <input type="text" id="text_display"/><br/>
@@ -127,7 +130,10 @@
 <button id="btn_multiply">*</button>
 <button id="btn_divide">/</button>
 
+
 <div id="debug_area">
 </div>
+
+
+
 </body>
-</html>
