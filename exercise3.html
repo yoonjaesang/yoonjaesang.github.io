@@ -38,7 +38,11 @@
             }
             html += '</table>';
         } else {
-            // TODO : 목록을 선택했을때 보여주기 위한 코드
+            // TODO: 목록을 선택했을때 보여주기 위한 코드
+            html =+ '<ul>';
+            for (var i=0; i<data.length; i++){
+                html += '<li>' + data[i].name + ':' + data[i].type + '</li>';
+            }
 
             // -----
         }
@@ -54,19 +58,20 @@
         var name_val = document.getElementById('name').value;
         var type_val = document.getElementById('type').value;
         var def = true;
-        // TODO : 동일한 이름이 존재하면 추가되지 않도록 하는 코드를 작성.
-        for(var i=0; i<data.length; i++)
-        {
-            if(data[i].name==name_val)
-            {alert('동일한 이름이 존재합니다.');
-            def=false;
+        // TODO: 동일한 이름이 존재하면 추가되지 않도록 하는 코드를 작성.
+        for (var i=0; i<data.length; i++) {
+            if (name_val == data[i].name) {
+                alert('동일한 이름이 존재합니다.');
+                def = false;
             }
-        }
-        if(def==true)
-        {
-            data[data.length]={name:name_val,type:type_val};
+
         }
         // -----
+        if(def == true){
+            data[data.length] = {name: name_val, type: type_val};
+        }
+
+
         radio_changed();
     };
 
